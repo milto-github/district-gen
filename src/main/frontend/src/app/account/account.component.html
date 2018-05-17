@@ -1,0 +1,41 @@
+<!-- SIGN UP OR IN MODAL -->
+<!-- Header -->
+<div class="modal-header">
+  <h4 class="modal-title">{{ user.username }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<!-- Body -->
+<div class="modal-body">
+  <ngb-tabset>
+    <!-- Setting -->
+    <ngb-tab title="Setting">
+      <ng-template ngbTabContent>
+        <app-account-setting [user]="user" [modal]="activeModal"></app-account-setting>
+        <!-- <app-account-setting [user]="user" (modalResponse)="closeModal($event)"></app-account-setting> -->
+      </ng-template>
+    </ngb-tab>
+    <!-- History -->
+    <ngb-tab title="History">
+      <ng-template ngbTabContent>
+        <!-- <app-account-history [items]="user.measurementProfileHistory"></app-account-history> -->
+        <app-account-history [user]="user" (measurementProfileLoader)="loadMeasurementProfile($event)"
+        (requestCloseModal)="deleteMeasurementProfile($event)"></app-account-history>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Admin" *ngIf="user.role === 'ADMIN'">
+      <ng-template ngbTabContent>
+        <app-account-admin [userList]="userList"
+          (requestDeleteUser)="deleteUser($event)"
+          (requestEditUser)="editUser($event)"
+          (requestAddUser)="addUser($event)">
+        </app-account-admin>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>
+<!-- Footer -->
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="closeModal()">Close</button>
+</div>

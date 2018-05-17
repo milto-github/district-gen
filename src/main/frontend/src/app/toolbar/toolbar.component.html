@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark site-header sticky-top">
+  <div class="navbar-brand" style="outline: none">Poppa Ice</div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav nav-pills mx-auto">
+      <li class="nav-item mx-5">
+        <a href="https://en.wikipedia.org/wiki/Gerrymandering" target="_blank" class="nav-link">Gerrymandering</a>
+      </li>
+      <li class="nav-item mx-5">
+        <a href="#" class="nav-link" (click)="openTeamInfo()" style="outline: none">Team Info</a>
+      </li>
+      <li class="nav-item mx-5">
+        <a href="#" class="nav-link" (click)="openAlgorithm()" style="outline: none">Algorithm</a>
+      </li>
+      <li class="nav-item mx-5" *ngIf="user">
+        <a href="#" class="nav-link" (click)="openWindowAccountInfo()" style="outline: none">Account Info</a>
+      </li>
+      <li class="nav-item mx-5">
+        <a href="https://github.com/" target="_blank" class="nav-link" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav nav-fill" *ngIf="user">
+      <li>
+        <button class="btn btn-outline-danger mr-2" (click)="logout()">Logout {{ user.username }}</button>
+      </li>
+    </ul>
+    <ul class="navbar-nav nav-fill" *ngIf="!user">
+      <li>
+        <button class="btn btn-outline-light mr-2" (click)="openWindowSignIn()">Sign In</button>
+      </li>
+      <li>
+        <button class="btn btn-outline-light" (click)="openWindowSignUp()">Sign Up</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- MAP COMPONENT -->
+<hr>
+<div class="row">
+  <div class="col">
+    <app-map [(user)]="user"></app-map>
+  </div>
+</div>

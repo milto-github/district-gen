@@ -1,0 +1,51 @@
+<!-- Header -->
+<div class="modal-header">
+  <h4 class="modal-title">Algorithm Information</h4>
+</div>
+<!-- Body -->
+<div class="modal-body d-flex justify-content-center">
+  <div class="container">
+    <!--<div style="display: flex; justify-content: center;">-->
+      <!--<img src="../../assets/AlgorithmWizard.jpg" alt="Steven Skiena" style="width: 800px; height: 533px;">-->
+    <!--</div>-->
+    <div class="container">
+      <h1>OUR ALGORITHMS</h1>
+      <span></span>
+      <p>The algorithm takes into account different social and geographical measures to determine the most fair
+        configuration of precincts to counteract gerrymandering. The algorithm computes the independent score of
+      four separate measures: compactness, population density, partisanship density, and racial breakdown and adds
+      those scores together to obtain the optimal zoning for the congressional districts of the selected state.</p>
+
+      <div>
+        <h2>Compactness Analysis</h2>
+        <p>Our algorithm uses a mixture of compactness measures to determine compactness for districts, including
+          the Polsby-Popper Test and Schwartzberg Compactness Measure to measure the compactness of the
+          congressional districts. The more compact a district is, the better the score calculated by the algorithm.</p>
+      </div>
+
+      <div>
+        <h2>Population Density Analysis</h2>
+        <p>The algorithm takes district population into account when computing the overall goodness score. The closer
+        the districts are to all having an even population, the higher the score.</p>
+      </div>
+
+      <div>
+        <h2>Partisanship Analysis</h2>
+        <p>We used 2016 Presidential Election data to determine the population of Democratic, Republican, and 3rd
+        Party voters in each district. The algorithm score increases as the populations of these voters become
+        more even per district.</p>
+      </div>
+
+      <div>
+        <h2>Racial Analysis</h2>
+        <p>We used 2010 census data that gave a 2016 estimate towards the populations of different races throughout
+        the districts. The algorithm score increases as the populations of these demographics become more even per
+        district.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

@@ -1,0 +1,37 @@
+<!-- <div class="row">
+  <div class="col">
+    <div class="avatar"> index </div>
+    <div class="item-content">
+      <div class="name">{{item.username}}</div>
+      <div>{{item.role}}</div>
+      <div>{{item.dateCreated}}</div>
+    </div>
+  </div>
+  <div class="col">
+    <button class="btn btn-primary float-right" (click)="openEditUser()">Edit</button>
+  </div>
+</div> -->
+<div class="container">
+    <div class="row">
+      <div class="col-9">
+        <div class="avatar"></div>
+        <div class="item-content">
+          <div class="name">{{ item.username }}</div>
+          <div class="row">
+            <div class="col">
+              <span style="font-weight: bold;">Date Created: </span>{{ item.dateCreated }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <span style="font-weight: bold;">Role: </span>{{ item.role }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary" (click)="editUser()">Edit</button>
+        <button class="btn btn-secondary float-right" (click)="deleteUser()">Delete</button>
+      </div>
+    </div>
+  </div>

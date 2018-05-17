@@ -1,0 +1,45 @@
+<!-- Modal Controller Version -->
+<!-- Header -->
+<div class="modal-header">
+  <h4 class="modal-title">Redistrict</h4>
+  <button type="button" class="close" aria-label="Close" (click)="this.activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<!-- Body -->
+<div class="modal-body">
+  <div class="card-body">
+    <div class="slidecontainer">
+      <span style="float:left">Compactness</span>
+      <span style="float:right">{{ this.user.activeMeasurementProfile.compactnessWeight }} %</span>
+      <span id="myRange1_output" style="float:right"></span>
+      <input type="range" min="0" max="100" class="slider" id="myRange1" [(ngModel)]="this.user.activeMeasurementProfile.compactnessWeight">
+    </div>
+    <div class="slidecontainer">
+      <p></p>
+      <span style="float:left">Partisan Fairness</span>
+      <span style="float:right">{{ this.user.activeMeasurementProfile.partisanFairnessWeight }} %</span>
+      <span id="myRange2_output" style="float:right"></span>
+      <input type="range" min="0" max="100" class="slider" id="myRange2" [(ngModel)]="this.user.activeMeasurementProfile.partisanFairnessWeight">
+    </div>
+    <div class="slidecontainer">
+      <p></p>
+      <span style="float:left">Racial Fairness</span>
+      <span style="float:right">{{ this.user.activeMeasurementProfile.racialFairnessWeight }} %</span>
+      <span id="myRange3_output" style="float:right"></span>
+      <input type="range" min="0" max="100" class="slider" id="myRange3" [(ngModel)]="this.user.activeMeasurementProfile.racialFairnessWeight">
+    </div>
+    <div class="slidecontainer">
+      <p></p>
+      <span style="float:left">Population</span>
+      <span style="float:right">{{ this.user.activeMeasurementProfile.populationDistributionWeight }} %</span>
+      <span id="myRange4_output" style="float:right"></span>
+      <input type="range" min="0" max="100" class="slider" id="myRange4" [(ngModel)]="this.user.activeMeasurementProfile.populationDistributionWeight">
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="this.activeModal.close()">Set MeasurementProfile</button>
+  <button type="button" class="btn btn-outline-dark" (click)="this.activeModal.dismiss()">Close</button>
+</div>

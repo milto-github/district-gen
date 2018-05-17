@@ -1,0 +1,28 @@
+<!-- Modal Controller Version -->
+<!-- Header -->
+<div class="modal-header">
+  <h4 class="modal-title">Freeze District</h4>
+  <button type="button" class="close" aria-label="Close" (click)="this.activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<!-- Body -->
+<div class="modal-body" style="text-align: center">
+  <div>Chosen District:
+  <span *ngIf="chosenDistrict === undefined"> N/A</span>
+  <span *ngIf="chosenDistrict !== undefined"> {{ this.chosenDistrict }}</span>
+  </div>
+  <hr>
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Select District To Freeze</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button class="dropdown-item" *ngFor="let congressID of congressIDs" (click)="chosenDistrict = congressID">
+        {{ congressID }}</button>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="apply()">Freeze Apply</button>
+  <button type="button" class="btn btn-outline-dark" (click)="this.activeModal.dismiss()">Close</button>
+</div>

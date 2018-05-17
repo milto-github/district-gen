@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col">
+    <h2>Maryland:<span style="color: red; font-weight: bold"> {{ this.webStats.get('MD') }}</span></h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+      <h2>West Virginia:<span style="color: blue; font-weight: bold"> {{ this.webStats.get('WV') }}</span></h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+      <h2>Virginia:<span style="color: green; font-weight: bold"> {{ this.webStats.get('VA') }}</span></h2>
+  </div>
+</div>
+
+
+<!-- <div>
+  <div style="display: block">
+    <canvas baseChart height="200px"
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  </div>
+</div> -->

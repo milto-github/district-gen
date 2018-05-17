@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col">
+    <div class="text-white bg-dark text-center">&nbsp;</div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-5 text-center">Measurement Profile Hisory</h1>
+      </div>
+    </div>
+    <!-- Put dynamic list -->
+    <virtual-scroll [items]="buffer" (update)="scrollItems = $event" (end)="fetchMore($event)">
+      <app-account-history-list-history *ngFor="let item of scrollItems" [item]="item"
+      (requestLoadMP)="loadMeasurementProfile($event)"
+      (requestDeleteMP)="deleteMeasurementProfile($event)"> </app-account-history-list-history>
+      <div *ngIf="loading" class="loader">Loading...</div>
+    </virtual-scroll>
+  </div>
+</div>
+<!-- <div class="row">
+  <div class="col">
+    <div class="text-white bg-dark text-center">&nbsp;</div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-5 text-center">Measurement Profile History</h1>
+      </div>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item">Profile5 [03/02/2018 18:56:14]
+        <a href="./virginiaCongressionalDistricts.html" class="btn btn-secondary float-right" role="button" aria-pressed="true">Load Profile</a>
+      </li>
+      <li class="list-group-item">Profile4 [03/02/2018 18:52:53]
+        <a href="./virginiaCongressionalDistricts.html" class="btn btn-secondary float-right" role="button" aria-pressed="true">Load Profile</a>
+      </li>
+      <li class="list-group-item">Profile3 [03/02/2018 18:22:12]
+        <a href="./virginiaCongressionalDistricts.html" class="btn btn-secondary float-right" role="button" aria-pressed="true">Load Profile</a>
+      </li>
+      <li class="list-group-item">Profile2 [03/02/2018 18:14:55]
+        <a href="./virginiaCongressionalDistricts.html" class="btn btn-secondary float-right" role="button" aria-pressed="true">Load Profile</a>
+      </li>
+      <li class="list-group-item">Profile1 [03/02/2018 18:12:34]
+        <a href="./virginiaCongressionalDistricts.html" class="btn btn-secondary float-right" role="button" aria-pressed="true">Load Profile</a>
+      </li>
+    </ul>
+  </div>
+</div> -->

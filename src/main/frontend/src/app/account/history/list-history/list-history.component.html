@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-9">
+      <div class="avatar">{{ item.id }}</div>
+      <div class="item-content">
+        <div class="name">Created Date: {{ item.dateCreated }}</div>
+        <div class="row">
+          <div class="col-6">
+            <span style="font-weight: bold;">Compactness: </span>{{ item.compactnessWeight }}
+          </div>
+          <div class="col-6">
+            <span style="font-weight: bold;">Partisan Fairness: </span>{{ item.partisanFairnessWeight }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <span style="font-weight: bold;">Racial Fairness: </span>{{ item.racialFairnessWeight }}
+          </div>
+          <div class="col-6">
+            <span style="font-weight: bold;">Population: </span>{{ item.populationDistributionWeight }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary float" (click)="loadMeasurementProfile()">Load</button>
+      <button class="btn btn-secondary float-right" (click)="deleteMeasurementProfile()">Delete</button>
+    </div>
+  </div>
+</div>
